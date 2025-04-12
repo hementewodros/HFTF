@@ -8,9 +8,9 @@ function spin() {
   const slot2 = document.getElementById("slot2");
   const slot3 = document.getElementById("slot3");
   const result = document.getElementById("result");
-  const coinCount = document.getElementById("coinCount");
   const loyaltyPointsDisplay = document.getElementById("loyaltyPoints");
   const spinsLeftDisplay = document.getElementById("spinsLeft");
+  const coinCount = document.getElementById("coinCount"); // Added coinCount element
 
   const spinCost = 200; // Cost per spin
 
