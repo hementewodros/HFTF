@@ -1,7 +1,7 @@
 const symbols = ["🍒", "🍋", "⭐️", "💎", "7"];
 
 let coins = 0;
-let loyaltyPoints = 40000; // Set initial loyalty points to 40,000
+let loyaltyPoints = 40000; // Starting loyalty points
 
 function spin() {
   const slot1 = document.getElementById("slot1");
@@ -12,45 +12,50 @@ function spin() {
   const loyaltyPointsDisplay = document.getElementById("loyaltyPoints");
   const spinsLeftDisplay = document.getElementById("spinsLeft");
 
-  // Check if there are enough loyalty points
-  if (loyaltyPoints < 500) {
+  const spinCost = 200; // Cost per spin
+
+  // Check if user has enough points
+  if (loyaltyPoints < spinCost) {
     result.textContent = "You've run out of loyalty points!";
     return;
   }
 
-  // Deduct loyalty points per spin
-  loyaltyPoints -= 500;
+  // Deduct spin cost
+  loyaltyPoints -= spinCost;
 
-  // Add spin animation
+  // Add spin animation (ensure CSS class exists)
   slot1.classList.add("spin-animation");
   slot2.classList.add("spin-animation");
   slot3.classList.add("spin-animation");
 
+  // Spin delay
   setTimeout(() => {
     const s1 = symbols[Math.floor(Math.random() * symbols.length)];
     const s2 = symbols[Math.floor(Math.random() * symbols.length)];
     const s3 = symbols[Math.floor(Math.random() * symbols.length)];
 
-    // If you're using emojis, just use textContent
+    // Set the slot symbols
     slot1.textContent = s1;
     slot2.textContent = s2;
     slot3.textContent = s3;
 
+    // Remove animation
     slot1.classList.remove("spin-animation");
     slot2.classList.remove("spin-animation");
     slot3.classList.remove("spin-animation");
 
-    // Winning logic
+    // Check win condition
     if (s1 === s2 && s2 === s3) {
-      result.textContent = "Jackpot! You win!";
+      result.textContent = `Jackpot! You got ${s1} ${s2} ${s3}`;
       loyaltyPoints += 3000;
+      coins += 50; // Optional coin reward
     } else {
-      result.textContent = "Try again!";
+      result.textContent = `You got ${s1} ${s2} ${s3} — Try again!`;
     }
 
     // Update UI
     coinCount.textContent = coins;
     loyaltyPointsDisplay.textContent = loyaltyPoints;
-    spinsLeftDisplay.textContent = Math.floor(loyaltyPoints / 500);
+    spinsLeftDisplay.textContent = Math.floor(loyaltyPoints / spinCost);
   }, 600);
 }
