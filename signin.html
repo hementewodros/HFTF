@@ -5,180 +5,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login and Sign Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
- <style>
-  :root {
-    --primary: #131b8b;
-    --accent: #d4af37;
-    --background: #ffffff;
-    --border-color: #e0e0e0;
-    --hover-color: #f5f8ff;
-  }
+ <style>/* ==== Global Styles for Auth Page ==== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--primary);
+  margin: 0;
+  padding-top: 120px; /* account for fixed header */
+}
 
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--background);
-    color: var(--primary);
-    margin: 0;
-    padding: 0;
-  }
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--primary);
-    color: white;
-    z-index: 1000;
-    padding: 15px 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  }
+/* ==== Header Navigation ==== */
+header nav.container {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
 
-  nav.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.logo-box .logo {
+  height: 40px;
+  border-radius: 4px;
+}
 
-  .logo-box img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+.parent-link {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
 
-  .parent-link {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-  }
+.parent-link a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-  .parent-link a {
-    text-decoration: none;
-    color: var(--accent);
-    font-weight: 500;
-    transition: 0.3s;
-  }
+.parent-link a:hover {
+  color: #fff;
+}
 
-  .parent-link a:hover {
-    color: white;
-  }
+.icon {
+  display: flex;
+  gap: 12px;
+}
 
+.sm-icon {
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: color 0.3s;
+}
+
+.sm-icon:hover {
+  color: #fff;
+}
+
+/* ==== Auth Form Styling ==== */
+.sub-form {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.upper-form h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 15px;
+  color: var(--primary);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--accent);
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.btn button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn button:hover {
+  background-color: var(--accent);
+  transform: scale(1.03);
+}
+
+/* ==== Toggle Link ==== */
+.bottom-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup {
+  color: var(--accent);
+  font-weight: 600;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.signup:hover {
+  color: var(--primary);
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 600px) {
+  .parent-link,
   .icon {
-    display: flex;
-    align-items: center;
-  }
-
-  .sm-icon {
-    padding: 10px;
-    margin: 0 0.5rem;
-    color: var(--accent);
-    font-size: 20px;
-    transition: 0.3s;
-  }
-
-  .sm-icon:hover {
-    color: white;
+    display: none;
   }
 
   .container {
-    display: flex;
-    justify-content: center;
-    padding-top: 120px;
+    padding: 15px;
   }
 
   .sub-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin: 40px 20px;
+    padding: 20px;
   }
+}
 
-  h2 {
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-  }
-
-  label {
-    align-self: flex-start;
-    margin-left: 1.5rem;
-    margin-bottom: 4px;
-    font-weight: 500;
-    color: var(--primary);
-  }
-
-  input {
-    width: 100%;
-    padding: 12px 20px;
-    border-radius: 25px;
-    border: 1px solid var(--border-color);
-    background-color: #f7f9fc;
-    margin-bottom: 1.2rem;
-    font-size: 16px;
-  }
-
-  input:focus {
-    outline: none;
-    border-color: var(--primary);
-    background-color: var(--hover-color);
-  }
-
-  button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 25px;
-    background-color: var(--primary);
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
-  }
-
-  button:hover {
-    background-color: var(--accent);
-    color: var(--primary);
-  }
-
-  .bottom-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    font-size: 14px;
-  }
-
-  .signup {
-    margin-left: 5px;
-    color: var(--accent);
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .signup:hover {
-    text-decoration: underline;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  @media (max-width: 600px) {
-    .sub-form {
-      width: 95%;
-    }
-
-    .parent-link {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
 </style>
 
 </head>
