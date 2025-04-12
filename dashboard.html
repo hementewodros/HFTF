@@ -70,18 +70,20 @@
             background-color: var(--hover-color);
             transition: background-color 0.3s ease;
         }
-
         .navbar {
-            background-color: var(--primary);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-        
+  width: 100%; /* Make it stretch full width */
+  background-color: var(--primary);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0; /* Remove border-radius for full-edge design */
+  margin: 0 0 30px 0; /* Remove left/right margin */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  left: 0;
+  right: 0;
+}
         .navbar .logo {
             font-size: 1.3rem;
             font-weight: bold;
