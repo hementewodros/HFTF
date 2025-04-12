@@ -43,7 +43,7 @@ function spin() {
     // Winning logic
     if (s1 === s2 && s2 === s3) {
       result.textContent = "Jackpot! You win!";
-      coins += 10;
+      loyaltyPoints += 3000;
     } else {
       result.textContent = "Try again!";
     }
