@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-image: linear-gradient(45deg, #21D4FD 0%, #B721FF 100%);
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    a {
+    text-decoration: none;
+    color: inherit;
+  }
+    .logo-box img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .parent-link {
+      display: flex;
+    }
+    .social-links {
+      padding: 0 2.5rem;
+      margin: 0;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .social-links:hover {
+      opacity: 0.8;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sm-icon {
+      padding: 10px;
+      margin: 0 1rem;
+      color: white;
+    }
+    .sm-icon:hover {
+      opacity: 0.8;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      padding-top: 3rem;
+    }
+    .sub-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 38vw;
+      height: 70vh;
+      border-radius: 12px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      background-color: white;
+      padding: 2rem;
+    }
+    h2 {
+      margin: 1.5rem 0 2rem 0;
+      text-align: center;
+    }
+    label {
+      padding-left: 16px;
+      opacity: 0.75;
+    }
+    input {
+      display: flex;
+      border-radius: 50px;
+      border: none;
+      outline: none;
+      margin-top: 8px;
+      padding: 12px 24px;
+      width: 250px;
+      background-color: #EAEEED;
+      font-size: 16px;
+    }
+    input:focus {
+      opacity: 0.7;
+    }
+    button {
+      padding: 12px 48px;
+      border-radius: 50px;
+      color: white;
+      margin-top: 1rem;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background-color: #1A1B27;
+      font-weight: 600;
+      width: 100%;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    .bottom-form {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    .signup {
+      padding-left: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      color: #21D4FD;
+    }
+    .signup:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <div class="logo-box">
+        <a href="https://www.kurifturesorts.com/" target="_blank">
+          <img src="KURIFTU.jpg" alt="Kuriftu Logo" class="logo">
+        </a>
+      </div>
+      <div class="parent-link">
+        <li><a href="index.html">Home</a></li>
+            <a href="signin.html">Log in/ Sign up</a>
+          <a href="transaction.html">Transactions</a>
+          <a href="ls.html">Lucky Slot</a>
+          <a href="dashboard.html">Send a Gift</a>
+      </div>
+      <div class="icon">
+        <a href="https://www.instagram.com" target="_blank" class="sm-icon">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="sm-icon">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a href="https://www.github.com" target="_blank" class="sm-icon">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="sm-icon">
+          <ion-icon name="logo-tiktok"></ion-icon>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="sm-icon">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <form action="#" class="sub-form" id="auth-form">
+      <div class="upper-form" id="login-form">
+        <h2>Login Form</h2>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <div class="btn">
+          <button type="submit">Login</button>
+        </div>
+      </div>
+
+      <div class="upper-form" id="signup-form" style="display:none;">
+        <h2>Sign Up Form</h2>
+        <label for="new-username">Username</label>
+        <input type="text" name="new-username" id="new-username" required>
+        <label for="new-email">Email</label>
+        <input type="email" name="new-email" id="new-email" required>
+        <label for="new-password">Password</label>
+        <input type="password" name="new-password" id="new-password" required>
+        <div class="btn">
+          <button type="submit">Sign Up</button>
+        </div>
+      </div>
+
+      <div class="bottom-form" id="bottom-form">
+        <div class="no-account" id="no-account-text">Don't have an account?</div>
+        <a href="#" class="signup" id="toggle-link">Sign up</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ionicons@5.5.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ionicons@5.5.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const toggleLink = document.getElementById('toggle-link');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const bottomForm = document.getElementById('bottom-form');
+    const noAccountText = document.getElementById('no-account-text');
+
+    toggleLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Toggle between login and sign up forms
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+        noAccountText.textContent = "Don't have an account?";
+        toggleLink.textContent = "Sign up";
+      } else {
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+        noAccountText.textContent = "Already have an account?";
+        toggleLink.textContent = "Log in";
+      }
+    });
+  </script>
+</body>
+</html>

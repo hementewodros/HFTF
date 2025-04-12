@@ -1,0 +1,219 @@
+:root {
+    --primary: #131b8b;
+    --accent: #d4af37;
+    --background: #ffffff;
+    --border-color: #e0e0e0;
+    --hover-color: #f5f8ff;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--primary);
+    padding: 40px;
+    margin: 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+    border-bottom: 3px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  th {
+    background-color: var(--primary);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  td {
+    color: var(--primary);
+  }
+  
+  td:last-child {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  tr:hover {
+    background-color: var(--hover-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    th {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+  
+    td {
+      padding: 12px;
+      border: none;
+      position: relative;
+      padding-left: 50%;
+      text-align: right;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      font-weight: bold;
+      color: var(--primary);
+      text-transform: capitalize;
+    }
+  }
+  .navbar {
+    background-color: var(--primary);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: white;
+  }
+  /* === Header === */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 8px var(--shadow);
+    z-index: 1000;
+  }
+  
+  .custom-header {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  .nav-item {
+    font-weight: 700;
+    color: var(--primary);
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+  }
+  
+  .nav-item:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+  }
+  
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent);
+    transition: 0.3s;
+  }
+  
+  .nav-item:hover::after {
+    width: 100%;
+  }
+  /* Add this to your trans.css file */
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+/* Position the camera icon in the center horizontally at the top */
+.camera-icon {
+  position: fixed;
+  top: 80px; /* Adjust the distance from the top */
+  left: 50%;
+  transform: translateX(-50%); /* Center the icon horizontally */
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* The icon should change to the QR code icon on hover */
+.camera-icon:hover i {
+  content: "\f029"; /* Unicode for the QR code icon (fa-qrcode) */
+  color: #007BFF; /* Change color on hover */
+  transform: scale(1.2); /* Slightly scale the icon */
+}
+
+/* Initial camera icon */
+.camera-icon i {
+  content: "\f030"; /* Unicode for the camera icon (fa-camera) */
+  color: #000; /* Default color */
+}
+
+/* Optional: Smooth color and scale transition for the icon */
+.camera-icon:hover i {
+  color: #007BFF;
+  transform: scale(1.2); /* Slightly scale the icon */
+}

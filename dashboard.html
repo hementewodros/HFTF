@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Points Form</title>
+    <style>
+        :root {
+            --primary: #131b8b;
+            --accent: #d4af37;
+            --background: #ffffff;
+            --border-color: #e0e0e0;
+            --hover-color: #f5f8ff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--primary);
+            padding: 40px;
+            margin: 0;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--background);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 14px 18px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+            font-size: 15px;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            color: var(--primary);
+        }
+        
+        td:last-child {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        
+        tr:hover {
+            background-color: var(--hover-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar {
+            background-color: var(--primary);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+        
+        .nav-links li {
+            margin: 0;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-container button:hover {
+            background-color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+        
+            th {
+                display: none;
+            }
+        
+            tr {
+                margin-bottom: 1rem;
+                border: 1px solid var(--border-color);
+                border-radius: 6px;
+                overflow: hidden;
+            }
+        
+            td {
+                padding: 12px;
+                border: none;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+        
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 12px;
+                top: 12px;
+                font-weight: bold;
+                color: var(--primary);
+                text-transform: capitalize;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Loyalty Program</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Points</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+    <h1>Loyalty Points Sharing</h1>
+    <div class="form-container">
+        <form id="loyaltyForm">
+            <label for="loyalpoints">Amount (Loyal Points):</label>
+            <input type="number" id="loyalpoints" name="loyalpoints" required>
+            
+            <label for="customerId">Customer ID:</label>
+            <input type="text" id="customerId" name="customerId" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="note">Note:</label>
+            <textarea id="note" name="note" rows="4" placeholder="Enter any additional note..."></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loyaltyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const loyalpoints = document.getElementById('loyalpoints').value;
+            const customerId = document.getElementById('customerId').value;
+            const password = document.getElementById('password').value;
+            const note = document.getElementById('note').value;
+
+            console.log('Loyal Points:', loyalpoints);
+            console.log('Customer ID:', customerId);
+            console.log('Password:', password);
+            console.log('Note:', note);
+
+            alert('Form Submitted Successfully!');
+        });
+    </script>
+
+</body>
+</html>

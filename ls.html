@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lucky Slot</title>
+  <link rel="stylesheet" href="ls.css">
+</head>
+<body>
+    <div class="navbar">
+          <div class="logo">MySite</div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signin.html">Log in/ Sign up</a></li>
+            <li><a href="transaction.html">Transactions</a></li>
+            <li><a href="ls.html">Lucky Slot</a></li>
+            <li><a href="dashboard.html">Send a Gift</a></li>
+          
+          </ul>
+      </div>
+      
+  <div class="container">
+    <h1>Lucky Slot Machine</h1>
+    <div class="slot-machine">
+      <div class="slot" id="slot1">?</div>
+      <div class="slot" id="slot2">?</div>
+      <div class="slot" id="slot3">?</div>
+    </div>
+    <button onclick="spin()">Spin</button>
+    <div class="status">
+      <p id="result">Try your luck!</p>
+      <p>Coins: <span id="coinCount">0</span></p>
+      <p>Loyality Points: <span id="loyaltyPoints">40,000</span></p>
+    </div>
+  </div>
+  <script src="ls.js"></script>
+</body>
+</html>
