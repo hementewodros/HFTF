@@ -5,30 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login and Sign Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
- <style>/* ==== Global Styles for Auth Page ==== */
+ <style>/* ==== Global Styles for Auth Page ==== */:root {
+  --primary: #131b8b;
+  --accent: #d4af37;
+  --background: #ffffff;
+  --border-color: #e0e0e0;
+  --hover-color: #f5f8ff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Base Styling ==== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--background);
   color: var(--primary);
   margin: 0;
-  padding-top: 120px; /* account for fixed header */
+  padding-top: 80px; /* Account for shorter fixed header */
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* ==== Header Navigation ==== */
+/* ==== Compact Header Navigation ==== */
 header nav.container {
   background-color: var(--primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 8px 20px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   width: 100%;
@@ -36,14 +44,16 @@ header nav.container {
 }
 
 .logo-box .logo {
-  height: 40px;
+  height: 32px;
   border-radius: 4px;
 }
 
 .parent-link {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   list-style: none;
+  font-size: 0.95rem;
+  align-items: center;
 }
 
 .parent-link a {
@@ -59,17 +69,24 @@ header nav.container {
 
 .icon {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .sm-icon {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--accent);
   transition: color 0.3s;
 }
 
 .sm-icon:hover {
   color: #fff;
+}
+
+/* ==== Form Container ==== */
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* ==== Auth Form Styling ==== */
@@ -135,7 +152,7 @@ input:focus {
   transform: scale(1.03);
 }
 
-/* ==== Toggle Link ==== */
+/* ==== Bottom Text and Toggle Link ==== */
 .bottom-form {
   text-align: center;
   margin-top: 20px;
@@ -168,6 +185,7 @@ input:focus {
     padding: 20px;
   }
 }
+
 
 </style>
 
