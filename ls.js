@@ -53,9 +53,9 @@ function spin() {
       result.textContent = `You got ${s1} ${s2} ${s3} — Try again!`;
     }
 
-    // Update UI
-    coinCount.textContent = coins;
-    loyaltyPointsDisplay.textContent = loyaltyPoints;
-    spinsLeftDisplay.textContent = Math.floor(loyaltyPoints / spinCost);
+    // Update UI with formatted values
+    coinCount.textContent = coins.toLocaleString(); // Formatting coins
+    loyaltyPointsDisplay.textContent = loyaltyPoints.toLocaleString(); // Formatting loyalty points
+    spinsLeftDisplay.textContent = Math.floor(loyaltyPoints / spinCost).toLocaleString(); // Formatting spins left
   }, 600);
 }
