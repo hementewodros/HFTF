@@ -1,10 +1,4 @@
-const symbols = [
-  "wine.jpg",   // Replace with image URL for Cherry
-  "gursha.jpg",    // Replace with image URL for Lemon
-  "game.jpg",     // Replace with image URL for Star
-  "room.jpg",  // Replace with image URL for Diamond
-  "seven.png"     // Replace with image URL for Seven
-];
+const symbols = ["🍒", "🍋", "⭐️", "💎", "7"];
 
 let coins = 0;
 let loyaltyPoints = 40000; // Set initial loyalty points to 40,000
